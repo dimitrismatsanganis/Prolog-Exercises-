@@ -3,4 +3,4 @@ sumlist([],0).
 
 sumlist([H|T],N) :- sumlist(T,N1), N is N1+H.
 % Foreach list's head (while head exists), add the head to sum counter
-% and continue the process for the list's tail.
+% and continue the process for the list's tail. 
