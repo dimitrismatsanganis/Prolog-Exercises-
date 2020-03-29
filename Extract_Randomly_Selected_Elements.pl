@@ -10,3 +10,4 @@ randomly_select(Xs,N,[X|Zs]) :- N > 0,
     remove(X,Xs,I,Ys),
     N1 is N - 1,
     randomly_select(Ys,N1,Zs).
+--
