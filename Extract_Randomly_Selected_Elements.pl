@@ -1,4 +1,5 @@
 remove(X,[X|Xs],1,Xs).
+
 % The first element in the list is number 1. 
 
 remove(X,[Y|Xs],N,[Y|Ys]) :- N > 1, 
@@ -10,7 +11,8 @@ remove(X,[Y|Xs],N,[Y|Ys]) :- N > 1,
 
 
 randomly_select(_,0,[]).
-%If the list contains only one element the select this one.
+
+% If the list contains only one element the select this one.
 
 randomly_select(Xs,N,[X|Zs]) :- N > 0,
     length(Xs,L),
