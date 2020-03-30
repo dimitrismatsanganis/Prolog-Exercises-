@@ -9,7 +9,8 @@ remove(X,[Y|Xs],N,[Y|Ys]) :- N > 1,
 
 
 randomly_select(_,0,[]).
-% randomly_select(L,N,R), the list R contains N randomly selected 
+% Explanation of the rule randomly_select/3;
+% R is a list which contains N randomly selected 
 % items taken from the list L.
 
 randomly_select(Xs,N,[X|Zs]) :- N > 0,
