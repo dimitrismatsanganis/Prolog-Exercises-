@@ -22,4 +22,3 @@ randomly_select(Xs,N,[X|Zs]) :- N > 0,
 % Explanation of the rule randomly_select/3;
 % R is a list which contains N randomly selected 
 % items taken from the list L.
-
