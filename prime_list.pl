@@ -26,5 +26,8 @@ p_list(A,B,L) :-
    next(A,A1), p_list(A1,B,L).
 
 next(2,3) :- !.
+% If input number is 2 the next prime input is 3.
+
 next(N,N1) :- N1 is N + 2.
+% Next prime number.
 
