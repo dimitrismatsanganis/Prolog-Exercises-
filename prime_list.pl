@@ -20,10 +20,8 @@ primelist(A,B,L) :- A1 is (A // 2) * 2 + 1, p_list(A1,B,L).
 % L is the list of prime number P with A <= P <= B.
 
 p_list(A,B,[]) :- A > B, !.
-p_list(A,B,[A|L]) :- isprime(A), !, 
-   next(A,A1), p_list(A1,B,L). 
-p_list(A,B,L) :- 
-   next(A,A1), p_list(A1,B,L).
+p_list(A,B,[A|L]) :- isprime(A), !,next(A,A1), p_list(A1,B,L). 
+p_list(A,B,L) :-next(A,A1), p_list(A1,B,L).
 
 next(2,3) :- !.
 % If input number is 2 the next prime input is 3.
@@ -31,3 +29,7 @@ next(2,3) :- !.
 next(N,N1) :- N1 is N + 2.
 % Next prime number.
 
+%__________________________________________________________
+% Given a range of integers by its lower and upper limit, 
+% construct a list of all prime numbers in that range.
+%__________________________________________________________
