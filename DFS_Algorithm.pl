@@ -13,5 +13,5 @@ godfs(Solution):- initial_state(IS),
 		  reverse(Solution1,Solution).
 		  
 %-----------------------------------------------------------
-%  DEPTH FIRST SEARCH WITH LOOP CHECK
+%  Depth-First Search (DFS) Algorithm with Loop Check.
 %-----------------------------------------------------------	  
