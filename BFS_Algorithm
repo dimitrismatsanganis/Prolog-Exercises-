@@ -11,3 +11,7 @@ expand(State,Path,Children):-  findall([Child,State|Path],
 gobfs(Solution):-  initial_state(IS), 
 		   bfs([[IS]],Solution1),
 		   reverse(Solution1,Solution).
+		   
+%------------------------------------------------------------
+%  Breadth-First Search (DFS) Algorithm with Loop Check.
+%------------------------------------------------------------
