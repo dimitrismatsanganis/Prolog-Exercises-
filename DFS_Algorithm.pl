@@ -11,3 +11,7 @@ expand(State,Path,Children):-  findall([Child,State|Path],
 godfs(Solution):- initial_state(IS), 
 		  dfs([[IS]],Solution1),
 		  reverse(Solution1,Solution).
+		  
+%------------------------------------------------------------
+%  DEPTH FIRST SEARCH WITH LOOP CHECK
+%------------------------------------------------------------		  
