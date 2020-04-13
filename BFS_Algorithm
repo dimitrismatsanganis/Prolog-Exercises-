@@ -1,1 +1,6 @@
-text
+bfs([[State|Path]|_], [State|Path]):-  goal(State).
+  
+bfs([[State|Path]|RestFrontierSet], Solution):-  write('Expanding '),write(State),nl, 
+	                                               expand(State,Path,ChildrenStates),
+	                                               append(RestFrontierSet,ChildrenStates,NewFrontierSet),
+	                                               bfs(NewFrontierSet, Solution).
