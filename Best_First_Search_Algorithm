@@ -20,3 +20,17 @@ expand(_-[State|Path],NewPaths):-
 			heuristic(NewState,Value)
 			),
 		NewPaths).
+
+heuristic(State,V):-
+	findall(Value, 
+			(goal(GoalState),h(State,GoalState,Value)), 
+	        AllValues),
+	min(AllValues,V),!.
+	
+min([M],M):-!.
+min([H|T],H):-
+	min(T,M),
+	H=<M.
+min([H|T],M):-
+	min(T,M),
+	H>M.
