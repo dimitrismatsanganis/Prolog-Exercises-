@@ -27,9 +27,11 @@ heuristic(State,V):-
 		     min(AllValues,V),!.
 	
 min([M],M):-!.
+
 min([H|T],H):-
-	min(T,M),
-	H=<M.
+		min(T,M),
+		H=<M.
+		
 min([H|T],M):-
-	min(T,M),
-	H>M.
+		min(T,M),
+		H>M.
