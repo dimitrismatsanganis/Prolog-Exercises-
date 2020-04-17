@@ -1,31 +1,30 @@
 gobestfs(Solution):-
-	initial_state(IS),
-	heuristic(IS,V),
-	bestfs([V-[IS]],Solution).
+		     initial_state(IS),
+		     heuristic(IS,V),
+		     bestfs([V-[IS]],Solution).
+		     
 
 bestfs([_-[State|Path]|_],[State|Path]):-
-	goal(State).
+					  goal(State).
+					  
+					  
 bestfs([V-[State|Path]|RestPaths],Solution):-
-%	nl, write('Expanding best state :'), write(V-State),nl,
-	expand(V-[State|Path],NewPaths),
-	append(NewPaths,RestPaths,Frontier),
-	keysort(Frontier,OrderedFrontier),
-	bestfs(OrderedFrontier,Solution).
+					      nl, write('Expanding best state :'), write(V-State),nl,
+					      expand(V-[State|Path],NewPaths),
+	    				      append(NewPaths,RestPaths,Frontier),
+					      keysort(Frontier,OrderedFrontier),
+					      bestfs(OrderedFrontier,Solution).					    
 			 
 expand(_-[State|Path],NewPaths):-
-	findall( Value-[NewState,State|Path],
-			(
-			operator(State,NewState),
-			not(member(NewState,Path)),
-			heuristic(NewState,Value)
-			),
-		NewPaths).
+				  findall( Value-[NewState,State|Path],
+				  ( operator(State,NewState),
+				    not(member(NewState,Path)),
+				    heuristic(NewState,Value)), NewPaths).
 
 heuristic(State,V):-
-	findall(Value, 
-			(goal(GoalState),h(State,GoalState,Value)), 
-	        AllValues),
-	min(AllValues,V),!.
+		     findall(Value, 
+		     (goal(GoalState),h(State,GoalState,Value)), AllValues),
+		     min(AllValues,V),!.
 	
 min([M],M):-!.
 min([H|T],H):-
