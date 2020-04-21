@@ -22,3 +22,7 @@ operator(state(left(ML,CL),right(MR,CR),boat_right),
 	NML =< 3,
 	NCL =< 3,
 	valid(NML, NCL).
+	
+%------------------------------------------------------------
+%  MISSIONARIES & CANNIBALS PROBLEM DEFINITION
+%-------------------------------------------------------------
