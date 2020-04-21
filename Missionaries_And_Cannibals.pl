@@ -12,6 +12,7 @@ operator(state(left(ML,CL),right(MR,CR),boat_left),
 	NMR is MR+M,
 	NCR is CR+C,
 	valid(NML, NCL).
+	
 operator(state(left(ML,CL),right(MR,CR),boat_right), 
 	 state(left(NML,NCL),right(NMR,NCR),boat_left)) :-
 	move(M, C),
@@ -23,6 +24,16 @@ operator(state(left(ML,CL),right(MR,CR),boat_right),
 	NCL =< 3,
 	valid(NML, NCL).
 	
+valid(X, X) :- !.
+valid(3, _) :- !.
+valid(0, _).
+
+move(2,0).
+move(1,0).
+move(1,1).
+move(0,1).
+move(0,2).
+	
 %------------------------------------------------------------
-%  MISSIONARIES & CANNIBALS PROBLEM DEFINITION
+%  MISSIONARIES & CANNIBALS PROBLEM 
 %-------------------------------------------------------------
