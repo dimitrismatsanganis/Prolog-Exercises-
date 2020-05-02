@@ -30,6 +30,7 @@ perm(L, [A | M]) :-
 % perm(L, M) is true only when list M is a permutation of list L. 
 
 remove(A, [A | L], L).
-remove(A, [B | L], [B | M]) :- remove(A, L, M).
+remove(A, [B | L], [B | M]) :-
+                              remove(A, L, M).
 % remove(A, L, M) is true only when A is a member of list L and M is the
 % residue when A is removed from L.
