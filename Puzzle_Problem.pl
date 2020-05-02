@@ -19,6 +19,13 @@
 
 
 member(A, [A | _]).
-member(A, [_ | X]) :- member(A, X).
-% member(A, L) is true when A is a member of L. 
+member(A, [_ | X]) :- 
+                     member(A, X).
+% member(A, L) is true only when A is a member of L. 
+
+perm([], []).
+perm(L, [A | M]) :-
+                   remove(A, L, R),
+                   perm(R, M).
+% perm(L, M) is true only when list M is a permutation of list L. 
  
