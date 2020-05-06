@@ -42,3 +42,4 @@ solve:- nl,
         write(' dances with the girl in red.'),
         nl,
         nl.
+
