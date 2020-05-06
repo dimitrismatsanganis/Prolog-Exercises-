@@ -34,3 +34,11 @@ remove(A, [B | L], [B | M]) :-
                               remove(A, L, M).
 % remove(A, L, M) is true only when A is a member of list L and M is the
 % residue when A is removed from L.
+
+solve:- nl,
+        write('The boy in '),
+        boyWhoDancesWithGirlInRed(X),
+        write(X),
+        write(' dances with the girl in red.'),
+        nl,
+        nl.
