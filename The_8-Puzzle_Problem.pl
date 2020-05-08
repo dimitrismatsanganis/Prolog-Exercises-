@@ -30,3 +30,7 @@ move(X,Y,NX,Y):-NX is X-1,NX>0.
 % left
 move(X,Y,NX,Y):-NX is X+1,NX<4.	
 % right
+
+change(_X,_Y,_X1,_Y1,_T,[],[]).
+change(X,Y,X1,Y1,T,[(X,Y,e)|R],[(X,Y,T)|CR]):-
+	change(X,Y,X1,Y1,T,R,CR).
