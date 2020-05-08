@@ -44,4 +44,6 @@ change(X,Y,X1,Y1,T,[(AX,AY,AT)|R],[(AX,AY,AT)|CR]):-
 h(S1,S2,V):-
 	    trans(TS1,S1),
 	    trans(TS2,S2), 
-	    evaluate(TS1,TS2,V).						   
+	    evaluate(TS1,TS2,V).
+	    
+evaluate([],[],0).	    
