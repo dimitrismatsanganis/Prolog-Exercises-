@@ -2,6 +2,8 @@
    The 8-Puzzle problem
 -------------------------------------------------*/
 
+% Various examples of initial states
+
 initial_state([2,4,3,1,e,5,7,8,6]).
 %initial_state([2,3,6,1,5,4,7,e,8]).
 
