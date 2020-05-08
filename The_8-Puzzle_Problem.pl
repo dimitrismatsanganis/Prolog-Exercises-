@@ -33,4 +33,10 @@ move(X,Y,NX,Y):-NX is X+1,NX<4.
 
 change(_X,_Y,_X1,_Y1,_T,[],[]).
 change(X,Y,X1,Y1,T,[(X,Y,e)|R],[(X,Y,T)|CR]):-
-	change(X,Y,X1,Y1,T,R,CR).
+						change(X,Y,X1,Y1,T,R,CR).
+						
+change(X,Y,X1,Y1,T,[(X1,Y1,T)|R],[(X1,Y1,e)|CR]):-
+						change(X,Y,X1,Y1,T,R,CR).
+change(X,Y,X1,Y1,T,[(AX,AY,AT)|R],[(AX,AY,AT)|CR]):-
+						   AT\=e, AT\=T,
+						   change(X,Y,X1,Y1,T,R,CR).
