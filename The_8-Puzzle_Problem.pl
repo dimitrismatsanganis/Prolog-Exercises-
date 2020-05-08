@@ -40,3 +40,8 @@ change(X,Y,X1,Y1,T,[(X1,Y1,T)|R],[(X1,Y1,e)|CR]):-
 change(X,Y,X1,Y1,T,[(AX,AY,AT)|R],[(AX,AY,AT)|CR]):-
 						   AT\=e, AT\=T,
 						   change(X,Y,X1,Y1,T,R,CR).
+						   
+h(S1,S2,V):-
+	    trans(TS1,S1),
+	    trans(TS2,S2), 
+	    evaluate(TS1,TS2,V).						   
